@@ -42,7 +42,7 @@
     <section class="page-header">
         <div class="container">
             <h1>Live Gold Market Data</h1>
-            <p>Real-time gold prices scraped from public sources. Auto-refreshes every 30 seconds.</p>
+            <p>Real-time gold prices scraped directly from public websites. No APIs, no tokens. Auto-refreshes every 30 seconds.</p>
         </div>
     </section>
 
@@ -186,7 +186,7 @@
                 <div class="info-grid">
                     <div class="info-card">
                         <h4><i class="fas fa-info-circle"></i> How It Works</h4>
-                        <p>Our system fetches real-time gold prices from publicly available financial data sources. The data is updated automatically every 30 seconds during market hours.</p>
+                        <p>Our system uses CORS proxies to fetch raw HTML from public gold price websites like Kitco, GoldPrice.org, and LBMA. We then parse the HTML using regex patterns to extract current prices. No APIs or tokens required!</p>
                     </div>
                     <div class="info-card">
                         <h4><i class="fas fa-clock"></i> Market Hours</h4>
