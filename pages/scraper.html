@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Live Data Scraper - StockOpinion</title>
+    <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container nav-container">
+            <a href="../index.html" class="logo">StockOpinion</a>
+            <ul class="nav-links">
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="scraper.html" class="active">Live Data</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+            <button class="mobile-menu-btn">☰</button>
+        </div>
+    </nav>
+
+    <header class="page-header">
+        <div class="container">
+            <h1>Real-Time Stock Data Scraper</h1>
+            <p>Fetch and analyze live stock market data instantly</p>
+        </div>
+    </header>
+
+    <section class="page-content">
+        <div class="container">
+            <div class="scraper-controls">
+                <h3>Search Stock</h3>
+                <form id="scraper-form">
+                    <div class="control-group">
+                        <input 
+                            type="text" 
+                            id="stock-symbol" 
+                            placeholder="Enter stock symbol (e.g., AAPL, GOOGL)" 
+                            required
+                            list="stock-suggestions"
+                        >
+                        <datalist id="stock-suggestions">
+                            <option value="AAPL">
+                            <option value="GOOGL">
+                            <option value="MSFT">
+                            <option value="AMZN">
+                            <option value="TSLA">
+                            <option value="META">
+                            <option value="NVDA">
+                            <option value="JPM">
+                            <option value="V">
+                            <option value="WMT">
+                        </datalist>
+                        <button type="submit">Fetch Data</button>
+                        <button type="button" id="refresh-btn">Auto-Refresh: ON</button>
+                    </div>
+                    <p id="last-update" style="color: var(--text-light); font-size: 0.9rem;">
+                        Enter a stock symbol to get started
+                    </p>
+                </form>
+            </div>
+
+            <div class="data-table">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Symbol</th>
+                            <th>Company</th>
+                            <th>Price</th>
+                            <th>Change</th>
+                            <th>Change %</th>
+                            <th>Volume</th>
+                            <th>Market Cap</th>
+                            <th>P/E Ratio</th>
+                        </tr>
+                    </thead>
+                    <tbody id="results-table">
+                        <tr>
+                            <td colspan="8" style="text-align: center; padding: 40px; color: var(--text-light);">
+                                Enter a stock symbol above to fetch real-time data
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div style="margin-top: 40px; padding: 20px; background: #fff3cd; border-radius: 10px; border-left: 4px solid #ffc107;">
+                <h4 style="margin-bottom: 10px;">⚠️ Note About Real-Time Data</h4>
+                <p style="color: var(--text-dark);">
+                    This demo simulates real-time stock data scraping. In a production environment, you would need:
+                </p>
+                <ul style="margin-top: 10px; margin-left: 20px; color: var(--text-dark);">
+                    <li>A backend server with web scraping capabilities (Node.js, Python, etc.)</li>
+                    <li>API access to financial data providers (Alpha Vantage, Yahoo Finance, IEX Cloud)</li>
+                    <li>Proper rate limiting and caching mechanisms</li>
+                    <li>Compliance with data provider terms of service</li>
+                </ul>
+                <p style="margin-top: 10px; color: var(--text-dark);">
+                    The data shown here is simulated for demonstration purposes and should not be used for actual trading decisions.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>StockOpinion</h3>
+                    <p>Your trusted source for stock market opinions and real-time data.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="blog.html">Blog</a></li>
+                        <li><a href="scraper.html">Live Data</a></li>
+                        <li><a href="about.html">About</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Connect</h4>
+                    <div class="social-links">
+                        <a href="#">Twitter</a>
+                        <a href="#">LinkedIn</a>
+                        <a href="#">GitHub</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 StockOpinion. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../js/main.js"></script>
+    <script>
+        // Auto-refresh toggle
+        let autoRefresh = true;
+        const refreshBtn = document.getElementById('refresh-btn');
+        
+        if (refreshBtn) {
+            refreshBtn.addEventListener('click', function() {
+                autoRefresh = !autoRefresh;
+                this.textContent = autoRefresh ? 'Auto-Refresh: ON' : 'Auto-Refresh: OFF';
+                this.style.background = autoRefresh ? 'var(--primary-color)' : '#6b7280';
+            });
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - StockOpinion</title>
+    <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container nav-container">
+            <a href="../index.html" class="logo">StockOpinion</a>
+            <ul class="nav-links">
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="scraper.html">Live Data</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html" class="active">Contact</a></li>
+            </ul>
+            <button class="mobile-menu-btn">☰</button>
+        </div>
+    </nav>
+
+    <header class="page-header">
+        <div class="container">
+            <h1>Contact Us</h1>
+            <p>Get in touch with our team of experts</p>
+        </div>
+    </header>
+
+    <section class="page-content">
+        <div class="container">
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 40px; margin-bottom: 60px;">
+                <div>
+                    <h2 style="margin-bottom: 20px; color: var(--primary-color);">Send Us a Message</h2>
+                    <p style="color: var(--text-light); line-height: 1.8; margin-bottom: 30px;">
+                        Have questions about our services? Want to suggest a topic for our blog? 
+                        Or just want to say hello? We'd love to hear from you!
+                    </p>
+                    
+                    <div style="margin-bottom: 20px;">
+                        <div style="display: flex; align-items: center; margin-bottom: 15px;">
+                            <span style="font-size: 1.5rem; margin-right: 15px;">📧</span>
+                            <div>
+                                <strong>Email</strong>
+                                <p style="color: var(--text-light); margin: 0;">contact@stockopinion.com</p>
+                            </div>
+                        </div>
+                        <div style="display: flex; align-items: center; margin-bottom: 15px;">
+                            <span style="font-size: 1.5rem; margin-right: 15px;">📍</span>
+                            <div>
+                                <strong>Location</strong>
+                                <p style="color: var(--text-light); margin: 0;">New York, NY</p>
+                            </div>
+                        </div>
+                        <div style="display: flex; align-items: center;">
+                            <span style="font-size: 1.5rem; margin-right: 15px;">⏰</span>
+                            <div>
+                                <strong>Business Hours</strong>
+                                <p style="color: var(--text-light); margin: 0;">Mon-Fri: 9AM - 6PM EST</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <form class="contact-form" id="contact-form">
+                    <div class="form-group">
+                        <label for="name">Full Name</label>
+                        <input type="text" id="name" name="name" required placeholder="John Doe">
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email Address</label>
+                        <input type="email" id="email" name="email" required placeholder="john@example.com">
+                    </div>
+                    <div class="form-group">
+                        <label for="subject">Subject</label>
+                        <input type="text" id="subject" name="subject" required placeholder="What is this about?">
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Message</label>
+                        <textarea id="message" name="message" required placeholder="Your message here..."></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary" style="width: 100%; border: none; cursor: pointer;">
+                        Send Message
+                    </button>
+                </form>
+            </div>
+
+            <div style="background: var(--white); padding: 40px; border-radius: 10px; box-shadow: 0 4px 15px rgba(0,0,0,0.1);">
+                <h2 style="margin-bottom: 30px; text-align: center; color: var(--primary-color);">Frequently Asked Questions</h2>
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px;">
+                    <div>
+                        <h4 style="margin-bottom: 10px;">Is the stock data real-time?</h4>
+                        <p style="color: var(--text-light); line-height: 1.6;">
+                            Our demo shows simulated data. In production, we integrate with multiple financial 
+                            data providers to ensure accurate, real-time information.
+                        </p>
+                    </div>
+                    <div>
+                        <h4 style="margin-bottom: 10px;">How often is the blog updated?</h4>
+                        <p style="color: var(--text-light); line-height: 1.6;">
+                            We publish new articles daily during market days, covering breaking news, 
+                            analysis, and educational content.
+                        </p>
+                    </div>
+                    <div>
+                        <h4 style="margin-bottom: 10px;">Can I request specific stock analysis?</h4>
+                        <p style="color: var(--text-light); line-height: 1.6;">
+                            Absolutely! Use the contact form to request analysis on specific stocks or sectors. 
+                            We prioritize requests based on community interest.
+                        </p>
+                    </div>
+                    <div>
+                        <h4 style="margin-bottom: 10px;">Is this financial advice?</h4>
+                        <p style="color: var(--text-light); line-height: 1.6;">
+                            No. Our content is for informational and educational purposes only. Always do your 
+                            own research or consult a certified financial advisor before making investment decisions.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>StockOpinion</h3>
+                    <p>Your trusted source for stock market opinions and real-time data.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="blog.html">Blog</a></li>
+                        <li><a href="scraper.html">Live Data</a></li>
+                        <li><a href="about.html">About</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Connect</h4>
+                    <div class="social-links">
+                        <a href="#">Twitter</a>
+                        <a href="#">LinkedIn</a>
+                        <a href="#">GitHub</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 StockOpinion. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../js/main.js"></script>
+</body>
+</html>
