@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Live Gold Prices - Real-Time Market Data</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">
+                <i class="fas fa-coins"></i>
+                <span>GoldInsights</span>
+            </a>
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="index.html" class="nav-link">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a href="live.html" class="nav-link active">Live Data</a>
+                </li>
+                <li class="nav-item">
+                    <a href="analysis.html" class="nav-link">Analysis</a>
+                </li>
+                <li class="nav-item">
+                    <a href="about.html" class="nav-link">About</a>
+                </li>
+            </ul>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1>Live Gold Market Data</h1>
+            <p>Real-time gold prices scraped from public sources. Auto-refreshes every 30 seconds.</p>
+        </div>
+    </section>
+
+    <!-- Main Data Section -->
+    <section class="live-data-section">
+        <div class="container">
+            <!-- Control Panel -->
+            <div class="control-panel">
+                <div class="status-indicator">
+                    <span class="status-dot" id="status-dot"></span>
+                    <span id="status-text">Connecting...</span>
+                </div>
+                <div class="refresh-controls">
+                    <button class="btn btn-refresh" id="manual-refresh">
+                        <i class="fas fa-sync-alt"></i> Refresh Now
+                    </button>
+                    <label class="toggle-switch">
+                        <input type="checkbox" id="auto-refresh" checked>
+                        <span class="slider"></span>
+                    </label>
+                    <span class="toggle-label">Auto-refresh</span>
+                </div>
+                <div class="last-update">
+                    Last updated: <span id="last-update-time">Never</span>
+                </div>
+            </div>
+
+            <!-- Price Display -->
+            <div class="price-display">
+                <div class="price-card main-price">
+                    <div class="price-header">
+                        <h2>Gold Spot Price (XAU/USD)</h2>
+                        <span class="source-badge">Source: Public Markets</span>
+                    </div>
+                    <div class="price-value">
+                        <span class="currency">$</span>
+                        <span class="amount" id="gold-price">--.--</span>
+                    </div>
+                    <div class="price-change" id="price-change">
+                        <span class="change-value">--.--</span>
+                        <span class="change-percent">(--.--%)</span>
+                    </div>
+                    <div class="price-time">
+                        <i class="far fa-clock"></i> As of <span id="price-timestamp">--:--:--</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Detailed Stats Grid -->
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="fas fa-arrow-up"></i>
+                    </div>
+                    <div class="stat-info">
+                        <span class="stat-label">Today's High</span>
+                        <span class="stat-value" id="today-high">--.--</span>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="fas fa-arrow-down"></i>
+                    </div>
+                    <div class="stat-info">
+                        <span class="stat-label">Today's Low</span>
+                        <span class="stat-value" id="today-low">--.--</span>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="fas fa-chart-bar"></i>
+                    </div>
+                    <div class="stat-info">
+                        <span class="stat-label">Open Price</span>
+                        <span class="stat-value" id="open-price">--.--</span>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="fas fa-percentage"></i>
+                    </div>
+                    <div class="stat-info">
+                        <span class="stat-label">Change %</span>
+                        <span class="stat-value" id="change-percent">--.--%</span>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="fas fa-calendar-day"></i>
+                    </div>
+                    <div class="stat-info">
+                        <span class="stat-label">52 Week High</span>
+                        <span class="stat-value" id="week-high">--.--</span>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="fas fa-calendar-day"></i>
+                    </div>
+                    <div class="stat-info">
+                        <span class="stat-label">52 Week Low</span>
+                        <span class="stat-value" id="week-low">--.--</span>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="fas fa-exchange-alt"></i>
+                    </div>
+                    <div class="stat-info">
+                        <span class="stat-label">Volume</span>
+                        <span class="stat-value" id="volume">--</span>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="fas fa-globe"></i>
+                    </div>
+                    <div class="stat-info">
+                        <span class="stat-label">Market Status</span>
+                        <span class="stat-value" id="market-status">--</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Price History Chart Placeholder -->
+            <div class="chart-section">
+                <h3>Price Trend (Intraday)</h3>
+                <div class="chart-container" id="price-chart">
+                    <div class="chart-placeholder">
+                        <i class="fas fa-chart-line"></i>
+                        <p>Interactive chart will display here</p>
+                        <small>Data updates every 30 seconds</small>
+                    </div>
+                    <canvas id="goldChart"></canvas>
+                </div>
+            </div>
+
+            <!-- Additional Info -->
+            <div class="info-section">
+                <h3>About Gold Pricing</h3>
+                <div class="info-grid">
+                    <div class="info-card">
+                        <h4><i class="fas fa-info-circle"></i> How It Works</h4>
+                        <p>Our system fetches real-time gold prices from publicly available financial data sources. The data is updated automatically every 30 seconds during market hours.</p>
+                    </div>
+                    <div class="info-card">
+                        <h4><i class="fas fa-clock"></i> Market Hours</h4>
+                        <p>Gold markets trade nearly 24 hours a day, Sunday evening through Friday afternoon (New York time). Most liquidity occurs during London and New York trading sessions.</p>
+                    </div>
+                    <div class="info-card">
+                        <h4><i class="fas fa-triangle-exclamation"></i> Disclaimer</h4>
+                        <p>This data is for informational purposes only. Prices may be delayed. Always verify with your broker before making trading decisions. Not financial advice.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>GoldInsights</h3>
+                    <p>Your trusted source for real-time gold market data and expert analysis.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="live.html">Live Data</a></li>
+                        <li><a href="analysis.html">Analysis</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Disclaimer</h4>
+                    <p>Data is sourced from public APIs and websites. This is for informational purposes only and not financial advice.</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 GoldInsights. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

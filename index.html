@@ -3,81 +3,185 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>StockOpinion - Home</title>
-    <link rel="stylesheet" href="css/styles.css">
+    <title>Gold Market Insights - Real-Time Gold Prices & Analysis</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
+    <!-- Navigation -->
     <nav class="navbar">
-        <div class="container nav-container">
-            <a href="index.html" class="logo">StockOpinion</a>
-            <ul class="nav-links">
-                <li><a href="index.html" class="active">Home</a></li>
-                <li><a href="pages/blog.html">Blog</a></li>
-                <li><a href="pages/scraper.html">Live Data</a></li>
-                <li><a href="pages/about.html">About</a></li>
-                <li><a href="pages/contact.html">Contact</a></li>
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">
+                <i class="fas fa-coins"></i>
+                <span>GoldInsights</span>
+            </a>
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="index.html" class="nav-link active">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a href="live.html" class="nav-link">Live Data</a>
+                </li>
+                <li class="nav-item">
+                    <a href="analysis.html" class="nav-link">Analysis</a>
+                </li>
+                <li class="nav-item">
+                    <a href="about.html" class="nav-link">About</a>
+                </li>
             </ul>
-            <button class="mobile-menu-btn">☰</button>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
         </div>
     </nav>
 
-    <header class="hero">
-        <div class="container">
-            <h1>Expert Stock Market Opinions & Real-Time Data</h1>
-            <p>Your trusted source for stock analysis, market insights, and live financial data</p>
-            <a href="pages/blog.html" class="btn btn-primary">Read Latest Posts</a>
-            <a href="pages/scraper.html" class="btn btn-secondary">View Live Data</a>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Real-Time Gold Market Intelligence</h1>
+            <p>Track live gold prices, market trends, and expert analysis. Your trusted source for precious metals insights.</p>
+            <div class="hero-buttons">
+                <a href="live.html" class="btn btn-primary">View Live Prices</a>
+                <a href="analysis.html" class="btn btn-secondary">Read Analysis</a>
+            </div>
         </div>
-    </header>
+        <div class="hero-image">
+            <i class="fas fa-coins hero-icon"></i>
+        </div>
+    </section>
 
-    <section class="featured-posts">
-        <div class="container">
-            <h2>Featured Articles</h2>
-            <div class="posts-grid" id="featured-posts">
-                <!-- Dynamic content -->
+    <!-- Live Ticker -->
+    <section class="ticker-section">
+        <div class="ticker-container">
+            <div class="ticker-item">
+                <span class="ticker-label">GOLD/USD</span>
+                <span class="ticker-price" id="ticker-price">Loading...</span>
+                <span class="ticker-change positive" id="ticker-change">--</span>
+            </div>
+            <div class="ticker-item">
+                <span class="ticker-label">24h High</span>
+                <span class="ticker-value" id="ticker-high">--</span>
+            </div>
+            <div class="ticker-item">
+                <span class="ticker-label">24h Low</span>
+                <span class="ticker-value" id="ticker-low">--</span>
+            </div>
+            <div class="ticker-item">
+                <span class="ticker-label">Last Update</span>
+                <span class="ticker-value" id="ticker-time">--</span>
             </div>
         </div>
     </section>
 
-    <section class="market-ticker">
+    <!-- Features Section -->
+    <section class="features">
         <div class="container">
-            <h2>Market Overview</h2>
-            <div class="ticker-container" id="market-ticker">
-                <div class="loading">Loading market data...</div>
+            <h2 class="section-title">Why Follow Gold Markets?</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3>Safe Haven Asset</h3>
+                    <p>Gold has historically preserved wealth during economic uncertainty and market volatility.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3>Inflation Hedge</h3>
+                    <p>Protect your purchasing power as gold typically rises when inflation increases.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-globe"></i>
+                    </div>
+                    <h3>Global Liquidity</h3>
+                    <p>Gold markets operate 24/7 worldwide, offering excellent liquidity for investors.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-balance-scale"></i>
+                    </div>
+                    <h3>Portfolio Diversification</h3>
+                    <p>Add stability to your investment portfolio with this time-tested asset class.</p>
+                </div>
             </div>
         </div>
     </section>
 
+    <!-- Latest Analysis Preview -->
+    <section class="analysis-preview">
+        <div class="container">
+            <h2 class="section-title">Latest Market Analysis</h2>
+            <div class="analysis-grid">
+                <article class="analysis-card featured">
+                    <div class="analysis-image">
+                        <i class="fas fa-chart-area"></i>
+                    </div>
+                    <div class="analysis-content">
+                        <span class="analysis-category">Market Outlook</span>
+                        <h3>Gold Price Forecast: What's Next for the Yellow Metal?</h3>
+                        <p>Expert analysis on current market conditions, technical indicators, and potential price movements in the coming weeks.</p>
+                        <a href="analysis.html" class="read-more">Read Full Analysis <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </article>
+                <article class="analysis-card">
+                    <div class="analysis-content">
+                        <span class="analysis-category">Economic Impact</span>
+                        <h3>Federal Reserve Policy & Gold Prices</h3>
+                        <p>How interest rate decisions affect gold valuations and investor sentiment.</p>
+                        <a href="analysis.html" class="read-more">Read More</a>
+                    </div>
+                </article>
+                <article class="analysis-card">
+                    <div class="analysis-content">
+                        <span class="analysis-category">Technical Analysis</span>
+                        <h3>Key Support & Resistance Levels</h3>
+                        <p>Critical price levels to watch for gold traders in the current market environment.</p>
+                        <a href="analysis.html" class="read-more">Read More</a>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
     <footer class="footer">
         <div class="container">
             <div class="footer-content">
                 <div class="footer-section">
-                    <h3>StockOpinion</h3>
-                    <p>Your trusted source for stock market opinions and real-time data.</p>
+                    <h3>GoldInsights</h3>
+                    <p>Your trusted source for real-time gold market data and expert analysis.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                    </div>
                 </div>
                 <div class="footer-section">
                     <h4>Quick Links</h4>
                     <ul>
-                        <li><a href="pages/blog.html">Blog</a></li>
-                        <li><a href="pages/scraper.html">Live Data</a></li>
-                        <li><a href="pages/about.html">About</a></li>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="live.html">Live Data</a></li>
+                        <li><a href="analysis.html">Analysis</a></li>
+                        <li><a href="about.html">About Us</a></li>
                     </ul>
                 </div>
                 <div class="footer-section">
-                    <h4>Connect</h4>
-                    <div class="social-links">
-                        <a href="#">Twitter</a>
-                        <a href="#">LinkedIn</a>
-                        <a href="#">GitHub</a>
-                    </div>
+                    <h4>Disclaimer</h4>
+                    <p>Data is sourced from public APIs and websites. This is for informational purposes only and not financial advice.</p>
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2024 StockOpinion. All rights reserved.</p>
+                <p>&copy; 2024 GoldInsights. All rights reserved.</p>
             </div>
         </div>
     </footer>
 
-    <script src="js/main.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
